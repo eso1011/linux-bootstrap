@@ -8,11 +8,12 @@ sudo apt-get install snap -y
 success=0
 
 sudo apt-get install tmux -y && ln -s -f .tmux/.tmux.conf && success=1
-if [ -n "$BASH_VERSION" -a -n "$PS1" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-        . "$HOME/.bashrc"
-    fi
+if ! test -f "~/.bash_profile"; then
+    touch ~/.bash_profile
+fi
+
+if ! grep -q "#tmux_fix" ~/.bash_profile; then
+    echo -e "\n#tmux_fix\nif [ -n "$BASH_VERSION" ]; then\n  # include .bashrc if it exists\n  if [ -f "$HOME/.bashrc" ]; then\n    . "$HOME/.bashrc"\n  fi\nfi" >>~/.bash_profile
 fi
 
 if ((success)); then
