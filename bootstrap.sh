@@ -1,12 +1,19 @@
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
-/usr/bin/setxkbmap -option "ctrl:swapcaps"
-sudo apt-get update && sudo apt-get upgrade && sudo apt-get install neo-vim
+setxkbmap -layout us -option ctrl:nocaps
+sudo apt-get update && sudo apt-get upgrade && sudo apt-get install vim
 sudo apt-get install curl -y
 sudo apt-get install snap -y
 success=0
+
 sudo apt-get install tmux -y && ln -s -f .tmux/.tmux.conf && success=1
+if [ -n "$BASH_VERSION" -a -n "$PS1" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+        . "$HOME/.bashrc"
+    fi
+fi
 
 if ((success)); then
     echo -e "${GREEN}tmux installed${NC}\n"
