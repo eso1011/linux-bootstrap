@@ -1,5 +1,7 @@
 **/*
 !.bashrc
+!.tmux.conf
 !README.MD
 !.gitignore
 !bootstrap.sh
+!.tmux/*

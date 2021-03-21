@@ -11,6 +11,9 @@ chmod +x ./bootstrap.sh
 
 Original tmux config stolen from https://github.com/gpakosz/.tmux.git
 
+- Install tmux `sudo apt install tmux`
+- Install tmux first then create symlink for config `ln -s -f .tmux/.tmux.conf`
+
 ## Tilda
 
 - Install tilda `sudo apt-get install tilda`
