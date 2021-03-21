@@ -1,13 +1,13 @@
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
-sudo apt-get update
-sudo apt-get upgrade
+/usr/bin/setxkbmap -option "ctrl:swapcaps"
+sudo apt-get update && sudo apt-get upgrade && sudo apt-get install neo-vim
 sudo apt-get install curl -y
 sudo apt-get install snap -y
 success=0
 sudo apt-get install tmux -y && ln -s -f .tmux/.tmux.conf && success=1
-sudo apt-get install neo-vim
+
 if ((success)); then
     echo -e "${GREEN}tmux installed${NC}\n"
 else
@@ -29,7 +29,7 @@ if ((success)); then
 else
     echo -e "${RED}idea installation failed${NC}\n"
 fi
-success=0
+success=0 && nvm --version
 
 curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh && sudo usermod -aG docker ${USER} && docker -v && success=1
 if ((success)); then
