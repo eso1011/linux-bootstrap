@@ -1,9 +1,10 @@
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
-
+sudo apt install curl -y
+sudo apt install snap -y
 success=0
-sudo apt install tmux && ln -s -f .tmux/.tmux.conf && success=1
+sudo apt install tmux -y && ln -s -f .tmux/.tmux.conf && success=1
 if ((success)); then
     echo -e "${GREEN}tmux installed${NC}\n"
 else
@@ -11,7 +12,7 @@ else
 fi
 success=0
 
-sudo apt-get install tilda && success=1
+sudo apt-get install tilda -y && success=1
 if ((success)); then
     echo -e "${GREEN}tilda installed${NC}\n"
 else
