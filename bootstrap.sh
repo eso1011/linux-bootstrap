@@ -7,7 +7,7 @@ sudo apt-get install curl -y
 sudo apt-get install snap -y
 success=0
 
-sudo apt-get install tmux -y && ln -s -f .tmux/.tmux.conf && success=1
+sudo apt-get install tmux -y && git clone https://github.com/gpakosz/.tmux.git && ln -s -f .tmux/.tmux.conf && cp .tmux/.tmux.conf.local .
 if ((success)); then
     echo -e "${GREEN}tmux installed${NC}\n"
 else
