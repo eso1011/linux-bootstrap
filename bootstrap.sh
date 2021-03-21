@@ -85,17 +85,22 @@ success=0
 
 # chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt install ./google-chrome-stable_current_amd64.deb -y -qq
+sudo apt install ./google-chrome-stable_current_amd64.deb -y -qq && success=1
 get_message success "chrome"
 success=0
 
 # final print
-echo -e "success packs:"
-for value in "${successPacks[@]}"; do
-    echo -e "${GREEN}$value${NC}\n"
-done
 
-echo -e "failed packs:"
-for value in "${failedPacks[@]}"; do
-    echo -e "${RED}$value${NC}\n"
-done
+if ! [ ${#successPacks[@]} -eq 0 ]; then
+    echo -e "success packs:"
+    for value in "${successPacks[@]}"; do
+        echo -e "${GREEN}$value${NC}\n"
+    done
+fi
+
+if ! [ ${#failedPacks[@]} -eq 0 ]; then
+    echo -e "failed packs:"
+    for value in "${failedPacks[@]}"; do
+        echo -e "${RED}$value${NC}\n"
+    done
+fi
