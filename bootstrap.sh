@@ -1,10 +1,13 @@
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
-sudo apt install curl -y
-sudo apt install snap -y
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install curl -y
+sudo apt-get install snap -y
 success=0
-sudo apt install tmux -y && ln -s -f .tmux/.tmux.conf && success=1
+sudo apt-get install tmux -y && ln -s -f .tmux/.tmux.conf && success=1
+sudo apt-get install neo-vim
 if ((success)); then
     echo -e "${GREEN}tmux installed${NC}\n"
 else
@@ -44,7 +47,7 @@ else
 fi
 success=0
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash && nvm --version && success=1
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash && success=1
 if ((success)); then
     echo -e "${GREEN}nvm installed${NC}\n"
 else
