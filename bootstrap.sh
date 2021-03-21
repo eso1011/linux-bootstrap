@@ -27,7 +27,7 @@ else
 fi
 success=0
 
-success=1 && curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh && sudo usermod -aG docker ${USER} && docker -v
+curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh && sudo usermod -aG docker ${USER} && docker -v && success=1
 if ((success)); then
     echo -e "${GREEN}docker engine installed${NC}\n"
 else
@@ -35,7 +35,7 @@ else
 fi
 success=0
 
-success=1 && sudo curl -L "https://github.com/docker/compose/releases/download/1.28.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && sudo chmod +x /usr/local/bin/docker-compose && docker-compose -v
+sudo curl -L "https://github.com/docker/compose/releases/download/1.28.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && sudo chmod +x /usr/local/bin/docker-compose && docker-compose -v && success=1
 if ((success)); then
     echo -e "${GREEN}docker-compose installed${NC}\n"
 else
@@ -43,7 +43,7 @@ else
 fi
 success=0
 
-success=1 && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash && nvm --version
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash && nvm --version && success=1
 if ((success)); then
     echo -e "${GREEN}nvm installed${NC}\n"
 else
