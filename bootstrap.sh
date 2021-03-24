@@ -50,7 +50,7 @@ if ! test -f "~/.bash_profile"; then
 fi
 
 if ! grep -q "#tmux_fix" ~/.bash_profile; then
-    echo -e "\n#tmux_fix\nif [ -n "$BASH_VERSION" ]; then\n  # include .bashrc if it exists\n  if [ -f "$HOME/.bashrc" ]; then\n    . "$HOME/.bashrc"\n  fi\nfi" >>~/.bash_profile
+    echo -e "\n#tmux_fix\nif [ -n \"$BASH_VERSION\" ]; then\n  # include .bashrc if it exists\n  if [ -f \"$HOME/.bashrc\" ]; then\n    . \"$HOME/.bashrc\"\n  fi\nfi" >>~/.bash_profile
 fi
 
 snap install spotify && success=1
