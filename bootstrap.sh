@@ -25,8 +25,8 @@ get_message() {
 }
 
 # set caps to ctrl
-system_message "set nocaps"
-setxkbmap -layout us -option ctrl:nocaps
+#system_message "set nocaps"
+#setxkbmap -layout us -option ctrl:nocaps
 
 # updating packages
 system_message "start update and upgrade apt-get"
@@ -87,6 +87,19 @@ success=0
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb -y -qq && success=1
 get_message success "chrome"
+success=0
+
+
+# lazydocker 
+curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash && success=1
+get_message success "lazydocker"
+success=0
+
+# lazygit 
+sudo add-apt-repository ppa:lazygit-team/release
+sudo apt-get update
+sudo apt-get install lazygit && success=1
+get_message success "lazygit"
 success=0
 
 # final print

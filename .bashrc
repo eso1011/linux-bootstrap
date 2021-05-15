@@ -123,6 +123,7 @@ alias dcudb='docker-compose up --build -d'
 alias itssh='ssh vbukharov@uauth.itsumma.com'
 alias dce='docker-compose exec '
 alias idea='/snap/intellij-idea-ultimate/285/bin/idea.sh > /dev/null 2>&1 &'
+alias lzd='lazydocker'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
