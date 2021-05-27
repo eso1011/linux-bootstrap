@@ -122,7 +122,6 @@ alias dcu='docker-compose up '
 alias dcudb='docker-compose up --build -d'
 alias itssh='ssh vbukharov@uauth.itsumma.com'
 alias dce='docker-compose exec '
-alias idea='/snap/intellij-idea-ultimate/285/bin/idea.sh > /dev/null 2>&1 &'
 alias lzd='lazydocker'
 alias lg='lazygit'
 
